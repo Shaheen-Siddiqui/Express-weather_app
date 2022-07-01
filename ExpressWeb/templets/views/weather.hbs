@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+{{!-- FONT OWSOME ICON LINKS --}}
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="images/favicons.png" type="images/png">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="container-fluid main_header ">
+    <div class="row">
+        <div class="col-md-10 col-12 mx-outo">
+            <div class="main-content">
+                <form class="temp_form">
+                    <input type="text" id="cityname" placeholder="enter your cityname" autocomplete="off" autofocus>
+                    <input type="submit" value="search" id="submitBtn">
+                </form>
+            </div>
+        <div class="tempInformation">
+            <div class="topLayer">
+                <p id="day">tuesday</p>
+                <p id="today_date">13 oct</p>
+            </div>
+            <div class="main_layer">
+              <p id="city_name">Get Output here</p>
+                
+            </div>
+        </div>
+<div class="temp_check_box">
+<p id="temprature" style="color: white;margin-left:31rem;margin-top:-6rem">  </p>
+<i id="Weathericons"></i>
+
+        </div>
+      </div>
+    </div>
+<a href="/"><button class="check_now_btn" style="margin-left: 40rem;margin-top:6rem; border-radius:0.5rem"> <- go back</button> </a>
+
+{{>footer}}
+
+
+
+
+<script src="js/main.js"></script>
+<script>
+
+
+const currentDay=()=>{
+    let weekend = new Array(7);
+    weekend[0]='Sunday';
+    weekend[1]='Monday';
+    weekend[2]='Tuesday';
+    weekend[3]='wesnesday';
+    weekend[4]='Thursday';
+    weekend[5]='Friday';
+    weekend[6]='Saturday';
+
+    let currentTime = new Date();
+    days = weekend[currentTime.getDay()]
+document.getElementById('day').innerText=days
+}
+currentDay();
+
+const getCurrentDate = () =>{
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = mm + '/' + dd + '/' + yyyy;
+document.getElementById('today_date').innerText=today
+}
+getCurrentDate()
+</script>
+</body>
+</html>
